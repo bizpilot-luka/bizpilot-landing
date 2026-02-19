@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BizPilot — AI-Powered Business Management</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; color: #1a1a2e; background: #fafafa; }
+    
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #2d1b69 100%);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+      top: -200px;
+      right: -200px;
+      border-radius: 50%;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+      bottom: -100px;
+      left: -100px;
+      border-radius: 50%;
+    }
+
+    .logo {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+    .logo span { color: #818cf8; }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+    }
+    h1 span {
+      background: linear-gradient(135deg, #818cf8, #a78bfa, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+      color: rgba(255,255,255,0.7);
+      max-width: 600px;
+      line-height: 1.6;
+      margin-bottom: 3rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.6rem 1.8rem;
+      border: 1px solid rgba(129, 140, 248, 0.4);
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #a5b4fc;
+      background: rgba(129, 140, 248, 0.08);
+      margin-bottom: 3rem;
+      position: relative;
+      z-index: 1;
+    }
+    .badge .dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: #34d399;
+      border-radius: 50%;
+      margin-right: 8px;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .features {
+      padding: 5rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .features h2 {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 3rem;
+      color: #1a1a2e;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .feature-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+      transition: box-shadow 0.2s;
+    }
+    .feature-card:hover {
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    }
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .feature-card h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .feature-card p {
+      color: #6b7280;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 5rem 2rem;
+      background: #f3f4f6;
+    }
+    .cta h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .cta p {
+      color: #6b7280;
+      font-size: 1.05rem;
+      margin-bottom: 2rem;
+    }
+    .cta a {
+      display: inline-block;
+      padding: 0.9rem 2.5rem;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: transform 0.15s;
+    }
+    .cta a:hover { transform: translateY(-1px); }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #9ca3af;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="logo">Biz<span>Pilot</span></div>
+    <h1>Your Business on <span>Autopilot</span></h1>
+    <p class="subtitle">AI-powered business management that handles scheduling, client communication, invoicing, marketing, and more — so you can focus on what you do best.</p>
+    <div class="badge"><span class="dot"></span>Launching Soon — Nashville, TN</div>
+  </section>
+
+  <section class="features">
+    <h2>Everything Your Business Needs</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">📅</div>
+        <h3>Smart Scheduling</h3>
+        <p>AI agent manages your calendar, handles bookings, sends reminders, and fills cancellations automatically.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💬</div>
+        <h3>Client Communication</h3>
+        <p>Automated SMS and voice — appointment confirmations, follow-ups, and customer support handled 24/7.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💰</div>
+        <h3>Invoicing & Payments</h3>
+        <p>Automatic invoicing, payment collection, and financial tracking. Never chase a payment again.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🌐</div>
+        <h3>Website Generator</h3>
+        <p>Professional website created and maintained for your business in minutes. SEO-optimized and mobile-ready.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Analytics Dashboard</h3>
+        <p>Real-time insights into revenue, client retention, booking patterns, and business health.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🤖</div>
+        <h3>AI-Powered</h3>
+        <p>Your own AI business assistant that learns your operations and gets smarter over time.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Ready to Put Your Business on Autopilot?</h2>
+    <p>We're launching soon in Nashville. Get in touch to be among the first.</p>
+    <a href="mailto:bizpilot2026@outlook.com">Contact Us</a>
+  </section>
+
+  <footer>
+    &copy; 2026 BizPilot LLC. All rights reserved. Nashville, TN.
+  </footer>
+</body>
+</html>
